@@ -1,0 +1,43 @@
+<?php foreach ($tb_pengguna as $dtpengguna) : ?>
+    <!-- Edit Pengguna Modal -->
+    <div class="modal fade" id="editpnggunaModal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Edit Data Pengguna</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form method="POST" action="<?= base_url(); ?>admin/TambahPengguna">
+
+                        <div class="form-group"><label class="medium mb-1" for="id_user">ID User</label><input class="form-control py-4" id="id_user" name="id_user" type="text" value="<?= $dtpengguna['id_user']; ?>" readonly />
+                            <?= form_error('id_user', '<small class="text-danger">', '</small>'); ?>
+                        </div>
+
+                        <div class="form-group"><label class="medium mb-1" for="nama_pengguna">Nama Pengguna</label><input class="form-control py-4" id="nama_pengguna" name="nama_pengguna" type="text" value="<?= $dtpengguna['nama_pengguna']; ?>" />
+                            <?= form_error('nama_pengguna', '<small class="text-danger">', '</small>'); ?>
+                        </div>
+
+                        <div class="form-group"><label class="medium mb-1" for="username">Username</label><input class="form-control py-4" id="username" name="username" type="text" value="<?= $dtpengguna['username']; ?>" />
+                            <?= form_error('username', '<small class="text-danger">', '</small>'); ?>
+                        </div>
+
+                        <div class="form-group"><label class="medium mb-1" for="email">Email</label><input class="form-control py-4" id="email" name="email" type="text" value="<?= $dtpengguna['email']; ?>" />
+                            <?= form_error('email', '<small class="text-danger">', '</small>'); ?>
+                        </div>
+
+                        <div class="form-row">
+                            <button type="submit" class="btn btn-primary mr-1">Submit</button>
+                            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <!-- isi modal footer -->
+                </div>
+            </div>
+        </div>
+    </div>
+<?php endforeach; ?>
